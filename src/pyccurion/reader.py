@@ -14,7 +14,7 @@ def accurionToWase(filename):
     dfs = readROIdat(filename)
     for i,df in dfs.items():
         new_filename = filename.replace(".dat", "_ROI"+str(i)+".dat")
-        columns = df.columns.intersection(["Lambda","AOI","Psi", "Delta", "Psi_sigma", "Delta_sigma"])
+        columns = [i for i in ["Lambda","AOI","Psi", "Delta", "Psi_sigma", "Delta_sigma"] if i in df.columns]
         df[columns].to_csv(new_filename, sep = "\t", header = None, index = None)
         with open(new_filename) as f:
             content = f.read()       
