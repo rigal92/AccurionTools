@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pyccurion"
 version = "1.0.0"
-dependencies = ["numpy","pandas","scimate", "scipy"]
+dependencies = ["numpy","pandas", "scipy"]
 authors = [
   { name="Riccardo Galafassi", email="rigal@live.it" },
 ]

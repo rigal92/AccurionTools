@@ -1,1 +1,1 @@
-from pyccurion.reader import accurionToWase, readROIdat
+from pyccurion.reader import accurionToWase, readROIdat, readImage

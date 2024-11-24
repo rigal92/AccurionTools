@@ -21,3 +21,34 @@ def accurionToWase(filename):
         with open(new_filename, "w") as f:
             f.write(wase_header + content)
 
+def readImage(filename):
+    """
+    Read an Accurion image and convert it to an array
+
+    Input
+    -----------------------------------------------------------------
+    filename: str
+        name of the image file to read.
+    """
+    from PIL import Image
+    from PIL.ExifTags import TAGS
+    import png
+    import imageio
+    import matplotlib.pyplot as plt
+    # meta = png.Reader(filename)
+    # meta.preamble()
+    # ret = imageio.imread(filename)
+    # plt.imshow(ret)
+    # plt.show()
+    im = Image.open(filename)
+    im.load()
+    meta = im.info
+    print(meta)
+    # data = im.getexif()
+    # for i in data:
+    #     tagname = TAGS.get(i,i)
+    #     value = data.get(i)
+    #     print(f"{tagname:25}: value")
+
+    # print(meta["Version"])
+
