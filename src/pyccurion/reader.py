@@ -33,7 +33,6 @@ def readImage(filename):
     from PIL import Image
     from PIL.ExifTags import TAGS
     import png
-    import imageio
     import matplotlib.pyplot as plt
     # meta = png.Reader(filename)
     # meta.preamble()
@@ -43,12 +42,8 @@ def readImage(filename):
     im = Image.open(filename)
     im.load()
     meta = im.info
-    print(meta)
-    # data = im.getexif()
-    # for i in data:
-    #     tagname = TAGS.get(i,i)
-    #     value = data.get(i)
+    # for tagname,value in meta.items():
     #     print(f"{tagname:25}: value")
 
-    # print(meta["Version"])
+    print(meta["IMAGE_MOTION_COMPENSATION"].encode("iso-8859-1"))
 
