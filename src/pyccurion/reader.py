@@ -43,7 +43,8 @@ def readImage(filename):
     im = Image.open(filename)
     im.load()
     meta = im.info
-    print(meta)
+    rd = meta[".ACCURION_RAWDATA"]
+    print(int(rd[:200]))
     # data = im.getexif()
     # for i in data:
     #     tagname = TAGS.get(i,i)
