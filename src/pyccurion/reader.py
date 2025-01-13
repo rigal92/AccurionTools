@@ -21,7 +21,7 @@ def accurionToWase(filename):
         with open(new_filename, "w") as f:
             f.write(wase_header + content)
 
-def readImage(filename):
+def readImage_DEP(filename):
     """
     Read an Accurion image and convert it to an array
 
@@ -32,7 +32,6 @@ def readImage(filename):
     """
     from PIL import Image
     from PIL.ExifTags import TAGS
-    import png
     import matplotlib.pyplot as plt
     # meta = png.Reader(filename)
     # meta.preamble()
