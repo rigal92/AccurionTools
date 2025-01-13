@@ -42,6 +42,12 @@ def readImage_DEP(filename):
     im.load()
     meta = im.info
     # for tagname,value in meta.items():
+    rd = meta[".ACCURION_RAWDATA"]
+    print(int(rd[:200]))
+    # data = im.getexif()
+    # for i in data:
+    #     tagname = TAGS.get(i,i)
+    #     value = data.get(i)
     #     print(f"{tagname:25}: value")
 
     print(meta["IMAGE_MOTION_COMPENSATION"].encode("iso-8859-1"))
