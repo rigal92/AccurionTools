@@ -1,5 +1,6 @@
 import sys
-from pyccurion import readROIdat, accurionToWase, readImage
+from pyccurion import readROIdat, accurionToWase
+from pyccurion.reader import imread
 
 if __name__ == '__main__':
     import argparse
@@ -17,4 +18,4 @@ if __name__ == '__main__':
         print("Splitting file" )
         accurionToWase(filename)
     if image:
-        readImage(filename)
+        imread(filename)
