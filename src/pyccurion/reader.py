@@ -1,9 +1,9 @@
 import pandas as pd 
 import os 
-from pandas import DataFrame
+from typing import Dict, Hashable
 from .nanofilm.ndimage.io import imread
 
-def readROIdat(filename:str)->dict[hashable,pd.DataFrame]:
+def readROIdat(filename:str)->Dict[Hashable,pd.DataFrame]:
     try:
         df = pd.read_table(filename, header = [0,1]).droplevel(1, axis = 1)
     except UnicodeDecodeError:
