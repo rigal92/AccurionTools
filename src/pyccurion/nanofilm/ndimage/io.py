@@ -7,11 +7,12 @@ __all__ = ['imread']
 
 import numpy as np
 from skimage.io import imread as _imread
+from numpy import ndarray
 
 CHUNK_DATA_KEY = '.ACCURION_RAWDATA'.encode('iso-8859-1')
 KEY2 = 'IMAGE_MOTION_COMPENSATION'.encode('iso-8859-1')
 
-def imread(file):
+def imread(file:str)->ndarray:
     """
     Read an image from a file as an numpy array.
     
