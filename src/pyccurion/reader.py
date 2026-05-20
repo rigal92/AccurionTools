@@ -44,6 +44,7 @@ def read_map(info_file:str)->tuple[pd.DataFrame,pd.DataFrame]:
     file_dir = os.path.dirname(info_file)
     lbd = info_df["#Lambda"]
     aoi = info_df["AOI"]
+    lbd.name = "Lambda"
     delta_df = [imread(f"{file_dir}/{d}") for d in info_df["Delta"]]
     shape = delta_df[0].shape
     columns = pd.MultiIndex.from_product([range(shape[0]), range(shape[1])], names=["xpixel", "ypixel"])
