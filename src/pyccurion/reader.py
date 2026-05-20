@@ -23,7 +23,7 @@ def accurionToWase(filename:str):
         with open(new_filename, "w") as f:
             f.write(wase_header + content)
 
-def read_map(info_file:str)->tuple[tuple[int,int],pd.DataFrame,pd.DataFrame]:
+def read_map(info_file:str)->tuple[pd.DataFrame,pd.DataFrame]:
     """
     Opens an accurion map and returns two DataFrame with psi and delta 
 
@@ -49,6 +49,6 @@ def read_map(info_file:str)->tuple[tuple[int,int],pd.DataFrame,pd.DataFrame]:
     columns = pd.MultiIndex.from_product([range(shape[0]), range(shape[1])], names=["xpixel", "ypixel"])
     delta_df = pd.DataFrame([df.flatten() for df in delta_df], index=[lbd,aoi], columns=columns)
     psi_df = pd.DataFrame([imread(f"{file_dir}/{d}").flatten() for d in info_df["Psi"]], index=[lbd,aoi], columns=columns)
-    return shape, delta_df, psi_df
+    return delta_df, psi_df
 
 
